@@ -3,9 +3,14 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "hardware/i2c.h"
+#include "hardware/gpio.h"
 
 #define RTC_24H_MODE 1
 #define RTC_12H_MODE 0
+
+#define RTC_OK 0
+#define RTC_ERR 1
 
 struct w_rtc_datetime_t {
 	uint8_t years;
