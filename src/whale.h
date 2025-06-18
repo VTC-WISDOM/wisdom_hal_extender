@@ -6,6 +6,7 @@
 
 #include "whale_radio.h"
 #include "whale_rtc.h"
+#include "whale_eeprom.h"
 
 // Return value of all unimplemented functions
 #define FUNC_UNIMPLEMENTED (-1)
