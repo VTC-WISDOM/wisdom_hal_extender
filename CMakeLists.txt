@@ -16,6 +16,11 @@ target_include_directories(${target} INTERFACE
 	modules
 )
 
+target_link_libraries(${target} INTERFACE
+	hardware_gpio
+	hardware_adc
+)
+
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/radio)
 	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/radio)
 	target_link_libraries(${target} INTERFACE whale_radio_module)

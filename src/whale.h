@@ -7,6 +7,7 @@
 #include "whale_radio.h"
 #include "whale_rtc.h"
 #include "whale_eeprom.h"
+#include "wisdom_board.h"
 
 // Return value of all unimplemented functions
 #define FUNC_UNIMPLEMENTED (-1)
@@ -78,6 +79,9 @@ static inline int whale_init(int modules) {
 	} else {
 		init_rval = WHALE_ERROR;
 	}
+
+	//// OTHER INITS
+	adc_init();
 
 	return whale_state;
 }
