@@ -22,6 +22,7 @@
 #define W_RADIO_MODULE    (0x1)
 #define W_CELLULAR_MODULE (0x2)
 #define W_RTC_MODULE      (0x4)
+#define W_EEPROM_MODULE   (0x8)
 
 enum whale_error {
 	WHALE_OK,
@@ -62,14 +63,22 @@ static inline int whale_init(int modules) {
 	//}
 
 	//// RTC
-	//init_rval = w_rtc_init();
-	//if (init_rval == W_RTC_OK) {
-	//	WHALE_MODULE_STATE |= W_RTC_MODULE;	
-	//} else {
-	//	rval = WHALE_ERROR;
-	//	// Log error here
-	//}
+	init_rval = w_rtc_init();
+	if (init_rval == W_RTC_OK) {
+		WHALE_MODULE_STATE |= W_RTC_MODULE;	
+	} else {
+		init_rval = WHALE_ERROR;
+		// Log error here
+	}
 	
+	//// EEPROM
+	init_rval = w_eeprom_init();
+	if (init_rval == W_EEPROM_OK) {
+		WHALE_MODULE_STATE |= W_EEPROM_MODULE;
+	} else {
+		init_rval = WHALE_ERROR;
+	}
+
 	return whale_state;
 }
 
