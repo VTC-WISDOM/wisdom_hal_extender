@@ -7,3 +7,6 @@
 [submodule "modules/eeprom"]
 	path = modules/eeprom
 	url = git@github.com:VTC-WISDOM/whale_eeprom.git
+[submodule "modules/cellular"]
+	path = modules/cellular
+	url = git@github.com:VTC-WISDOM/whale_cellular.git
