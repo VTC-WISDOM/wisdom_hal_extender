@@ -9,6 +9,7 @@ target_sources(${target} INTERFACE
 	src/modules_weak/radio_weak.c
 	src/modules_weak/rtc_weak.c
 	src/modules_weak/eeprom_weak.c
+	src/modules_weak/cellular_weak.c
 )
 
 target_include_directories(${target} INTERFACE
@@ -35,4 +36,9 @@ endif()
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/eeprom)
 	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/eeprom)
 	target_link_libraries(${target} INTERFACE whale_eeprom_module)
+endif()
+
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/cellular)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/cellular)
+	target_link_libraries(${target} INTERFACE whale_cellular_module)
 endif()

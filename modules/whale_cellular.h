@@ -1,0 +1,4 @@
+#ifndef WHALE_CELLULAR_H
+#define WHALE_CELLULAR_H
+
+#endif //WHALE_CELLULAR_H
