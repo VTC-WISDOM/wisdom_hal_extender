@@ -1,2 +1,5 @@
 build/
 modules/*/*
+submodules/eeprom
+submodules/radio
+submodules/rtc
