@@ -1,0 +1,11 @@
+[[submodule]]
+remote = "https://github.com/VTC-WISDOM/whale_rtc.git"
+local = "submodules/rtc"
+
+[[submodule]]
+remote = "https://github.com/VTC-WISDOM/whale_radio_rfm69.git"
+local = "submodules/radio"
+
+[[submodule]]
+remote = "https://github.com/VTC-WISDOM/whale_eeprom.git"
+local = "submodules/eeprom"
