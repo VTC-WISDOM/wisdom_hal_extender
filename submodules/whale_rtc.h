@@ -21,8 +21,6 @@ struct w_rtc_datetime_t {
 	uint8_t seconds;
 };
 
-
-
 int w_rtc_init(void);
 int w_rtc_hw_rst(void);
 

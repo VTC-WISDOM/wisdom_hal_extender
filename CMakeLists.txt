@@ -13,7 +13,7 @@ target_sources(${target} INTERFACE
 
 target_include_directories(${target} INTERFACE
 	src
-	modules
+	submodules
 )
 
 target_link_libraries(${target} INTERFACE
@@ -21,18 +21,18 @@ target_link_libraries(${target} INTERFACE
 	hardware_adc
 )
 
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/radio)
-	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/radio)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/submodules/radio)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/submodules/radio)
 	target_link_libraries(${target} INTERFACE whale_radio_module)
 endif()
 
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/rtc)
-	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/rtc)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/submodules/rtc)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/submodules/rtc)
 	target_link_libraries(${target} INTERFACE whale_rtc_module)
 endif()
 
 
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/modules/eeprom)
-	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/modules/eeprom)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/submodules/eeprom)
+	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/submodules/eeprom)
 	target_link_libraries(${target} INTERFACE whale_eeprom_module)
 endif()
